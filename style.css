@@ -37,9 +37,9 @@ body.dark strong {
 /* HERO NEW BACKGROUND */
 .hero {
   position: relative;
-  height: 100vh;
-  padding-top: 100px !important; /* Prevent content hiding behind navbar */
-  background: url("assets/bg.jpg") center/cover no-repeat fixed;
+  min-height: 100vh;
+  padding: 120px 0 60px;
+  background: url("bg.jpg") center/cover no-repeat fixed;
   color: #fff;
 }
 .hero .overlay {
@@ -50,10 +50,17 @@ body.dark strong {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
 }
+.hero .row {
+  gap: 2rem 0;
+}
 .hero-img {
-  width: 50%;
-  height: 400px;
+  width: min(320px, 100%);
+  max-width: 100%;
+  height: auto;
   border-radius: 20px;
+  margin: 0 auto;
+  display: block;
+  object-fit: cover;
   animation: float 3s ease-in-out infinite;
 }
 @keyframes float {
@@ -132,12 +139,37 @@ body.dark .skill-box {
 .project-img {
   border-radius: 12px;
   width: 100%;
-  height: 500px;
+  max-width: 100%;
+  height: auto;
+  min-height: 220px;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
 .project-img:hover {
   transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 110px 0 50px;
+  }
+
+  .hero-img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .project-img {
+    max-height: 320px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
 }
 
 footer {
@@ -150,95 +182,96 @@ footer {
 
 /* Section wrapper */
 .skills {
-    padding: 60px 0;
+  padding: 60px 0;
 }
 
 /* Section heading */
 .section-title {
-    font-size: 32px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 /* Grid layout */
 .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 /* Each box */
 .skill-box {
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: .3s ease;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
 }
 
 /* Hover effect */
 .skill-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* Box title */
 .skill-box h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #222;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #222;
 }
 
 /* Description */
 .skill-box p {
-    font-size: 15px;
-    color: #555;
+  font-size: 15px;
+  color: #555;
 }
 /* Contact section uses the SAME styling as SKILLS & EXPERIENCE */
 
 .skills {
-    padding: 60px 0;
+  padding: 60px 0;
 }
 
 .section-title {
-    font-size: 32px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .skill-box {
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: .3s ease;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
 }
 
 .skill-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .skill-box h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #222;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #222;
 }
 
-.skill-box p, .skill-box a {
-    font-size: 15px;
-    color: #444;
-    text-decoration: none;
+.skill-box p,
+.skill-box a {
+  font-size: 15px;
+  color: #444;
+  text-decoration: none;
 }
 
 .skill-box a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
